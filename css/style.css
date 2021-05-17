@@ -1,3 +1,17 @@
-body{
-    font-family: Montserrat;
+
+
+
+
+.content{
+    background-color: lightgrey;
+    max-width: 950px;
+    padding: 30px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.backgroundContent{
+    background-image: url("../img/0002.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
