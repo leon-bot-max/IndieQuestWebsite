@@ -1,16 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 
+body{
+    font-family: Montserrat;
+}
 
-
+h1, h2, h3, h4, h5{
+    font-weight: bold;
+}
 .content{
-    background-color: lightgrey;
+    background-color: whitesmoke;
     max-width: 950px;
     padding: 30px;
     margin: auto;
     border-radius: 5px;
 }
 
-.backgroundContent{
+.contentPageBackground{
     background-image: url("../img/0002.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
