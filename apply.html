@@ -14,7 +14,7 @@
     <title>Welcome</title>
 
     <!-- Script -->
-    <script src="applyScript.js"></script>
+    <script src="js/applyScript.js"></script>
 </head>
 
 <body class="contentPageBackground">
@@ -138,9 +138,10 @@
             <br>
             <input type="radio" id="svensk" name="medborgarskap" value="svensk" required>
             <label for="svensk">Svensk</label><br>
-            <input type="radio" id="annat" name="medborgarskap" value="annat">
+            <input type="radio" id="annatLand" name="medborgarskap" value="annat">
             <label for="annat">Annat</label>
 
+            <input type="text" id="land" name="land" style="visibility:hidden">
             <br>
             <br>
  
@@ -153,7 +154,7 @@
 
 
 
-            <input type="submit" value="Apply">
+            <input id="submitButton" type="submit" value="Apply">
         </form>
     </main>
 
