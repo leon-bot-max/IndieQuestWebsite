@@ -53,15 +53,16 @@
         </div>
     </nav>
 
+    <!-- Application form -->
     <main class="content">
         <header>
             <h1>Apply</h1>
         </header>
 
-        <form action="">
+        <form onsubmit="return validateRequiredInputs()">
             <label for="personnummer">Personnummer (ÅÅÅÅMMDD-XXXX) *</label>
             <br>
-            <input type="text" id="personnummer" name="personnummer" pattern="[0-9]{4}[0-9]{2}[0-9]{2}-[0-9]{4}"
+            <input type="text" id="personnummer" name="personnummer" pattern="[0-9]{8}-[0-9]{4}" maxlength="13"
                 required>
 
             <br>
@@ -71,12 +72,12 @@
                 <div class="col-md-4">
                     <label for="firstname">Förnamn *</label>
                     <br>
-                    <input type="text" id="firstname" name="förnamn" required>
+                    <input type="text" id="fname" name="förnamn" required>
                 </div>
                 <div class="col-md-4">
                     <label for="lastname">Efternamn *</label>
                     <br>
-                    <input type="text" id="lastname" name="efternamn" required>
+                    <input type="text" id="lname" name="efternamn" required>
                 </div>
             </div>
 

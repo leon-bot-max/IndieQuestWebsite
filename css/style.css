@@ -90,7 +90,8 @@ h1, h2, h3, h4, h5{
 }
 
 #submitButton{
-    background-color: grey;
+    background-color: lightgreen;
+    font-size: 25px;
 }
 
 input:invalid{
