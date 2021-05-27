@@ -95,6 +95,7 @@ h1, h2, h3, h4, h5{
 
 input:invalid{
     border: 2px solid red;
+    font-weight: bold;
 }
 input:valid{
     border: 1px solid black;
