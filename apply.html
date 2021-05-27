@@ -60,7 +60,7 @@
         <form action="">
             <label for="personnummer">Personnummer (ÅÅÅÅMMDD-XXXX) *</label>
             <br>
-            <input type="text" id="personnummer" name="personnummer" required>
+            <input type="text" id="personnummer" name="personnummer" pattern="[0-9]{4}[0-9]{2}[0-9]{2}-[0-9]{4}" required>
 
             <br>
             <br>
@@ -96,7 +96,7 @@
 
             <label for="postnummer">Postnummer *</label>
             <br>
-            <input type="number" id="postnummer" name="postnummer" required>       
+            <input type="text" id="postnummer" name="postnummer" pattern="[0-9]+" required>       
                         
             <br>
             <br>

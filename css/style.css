@@ -92,3 +92,10 @@ h1, h2, h3, h4, h5{
 #submitButton{
     background-color: grey;
 }
+
+input:invalid{
+    border: 2px solid red;
+}
+input:valid{
+    border: 1px solid black;
+}
