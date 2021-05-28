@@ -1,6 +1,4 @@
-var submitButton;
-
-let inputFormatPnr = new RegExp("[0-9]{8}-[0-9]{4}"); //Expected format
+let inputFormatPnr = new RegExp("[0-9]{8}-[0-9]{4}"); //Expected format personnummer
 
 var personnummerInput;
 var otherCountryRadio, swedenRadio;
@@ -24,8 +22,9 @@ function init() {
 window.onload = init;
 
 function personnummerFormat() { //Remove all non digits and Autoformat if they forget "-"
+    personnummerInput.value = personnummerInput.value.replace(/[^\d]/g, ''); //Remove all non digits
+    //insert '-'
     if (personnummerInput.value.length >= 12 && !inputFormatPnr.test(personnummerInput.value)) {
-        personnummerInput.value = personnummerInput.value.replace(/[^\d]/g, '');
         personnummerInput.value = personnummerInput.value.slice(0, 8) + "-" + personnummerInput.value.slice(8, 12);//insert '-'
         
     }
@@ -44,27 +43,44 @@ function countryButtonClick() {
 
 function validateRequiredInputs() {
     var reason = "";
-
+    //Personnummer
     if (!validatePersonnummer(document.getElementById("personnummer").value)) {
         reason += "Invalid personnummer\n";
     }
 
+    //Namn
     if (!validateTextInput(document.getElementById("fname"))){
         reason += "Invalid firstname\n";
     }
     if (!validateTextInput(document.getElementById("lname"))){
         reason += "Invalid lastname\n";
     }
+    //Adress
     if (!validateTextInput(document.getElementById("adress"))){
         reason += "Invalid address\n";
     }
-
+    //Medborgarskap if annat land         
     if (otherCountryRadio.checked) {
         if (!validateTextInput(otherCountryInput)){
-            reason += "Invalid other country";
+            reason += "Invalid other country\n";
         }
     }
+    // c/o
     trimValue(document.getElementById("co"));
+
+    //Postnummer
+    if (!validatePostnummer()){
+        reason += "Invalid postnummer\n"
+    }
+    //Kontakt
+    if (!validateRadioButtonGroup("contact")){
+        reason += "No contact chosen\n"
+    }
+    //Medborgarskap
+    if (!validateRadioButtonGroup("medborgarskap")){
+        reason += "No citizenship chosen\n"
+    }
+
 
     if (reason == ""){//No invalid inputs
         alert("All inputs accepted")
@@ -73,6 +89,26 @@ function validateRequiredInputs() {
     alert(reason);
     return false;
 }
+
+function validatePostnummer(){
+    var pnFormat = new RegExp("[0-9]+");
+    var pn = document.getElementById("postnummer");
+    if (pnFormat.test(pn.value)){
+        return true;
+    }
+    return false;
+}
+
+function validateRadioButtonGroup(name){ 
+    var buttons = document.getElementsByName(name); // Get all radiobuttons
+    for (var i = 0; i < buttons.length; i++){
+        if (buttons[i].checked){ //One is checked
+            return true
+        }
+    }
+    return false; //None are checked
+}
+
 function validateTextInput(textField)
 {
     //All names valid as long as not empty, trimmed so they don't begin or end with blank
@@ -81,7 +117,8 @@ function validateTextInput(textField)
     }
     trimValue(textField);
     
-    if (textField.length <= 0){
+    //Check if empty
+    if (textField.value.length <= 0){
         return false;
     }
     return true;

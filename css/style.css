@@ -16,14 +16,10 @@ h1, h2, h3, h4, h5{
     border-radius: 5px;
 }
 
-.contentPageBackground{
+.page-background{
     background-image: url("../img/0002.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
-.card{
-    height: 100%;
-    background-color: whitesmoke;
 }
 
 .margin-row{
@@ -32,11 +28,18 @@ h1, h2, h3, h4, h5{
     margin-right: 5px;
 }
 
+.card{
+    height: 100%;
+    background-color: whitesmoke;
+}
+
 @media (max-width: 1200px){
 [class*="col-"]:not(:last-child){
     margin-bottom: 10px;
   }
 }
+
+/* Welcome page styling */
 
 .video-container {
     overflow: hidden;
@@ -60,6 +63,7 @@ h1, h2, h3, h4, h5{
     height: 100%;
 }
 
+/* Find us containers */
 .map-container{
     overflow: hidden;
     position: relative;
@@ -89,9 +93,11 @@ h1, h2, h3, h4, h5{
     border-radius: 5px;
 }
 
+/* Application styling */
 #submitButton{
     background-color: lightgreen;
-    font-size: 25px;
+    font-size: 30px;
+    border-radius: 5px;
 }
 
 input:invalid{

@@ -11,19 +11,20 @@
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <!-- Own css -->
     <link href="css/style.css" rel="stylesheet">
-    <title>Welcome</title>
 
     <!-- Script -->
     <script src="js/applyScript.js"></script>
+
+    <title>Welcome</title>
 </head>
 
-<body class="contentPageBackground">
+<body class="page-background">
 
     <!-- Navbar -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="img/IQ_Logo_White_Roof.png" alt="The Indie Quest" width="90px" height="90px"
+                <img src="img/IQ_Logo_White_Roof.png" alt="The Indie Quest" width="90" height="90"
                     class="d-inline-block align-text-top">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -59,7 +60,7 @@
             <h1>Apply</h1>
         </header>
 
-        <form onsubmit="return validateRequiredInputs()">
+        <form action="#" onsubmit="return validateRequiredInputs()">
             <label for="personnummer">Personnummer (ÅÅÅÅMMDD-XXXX) *</label>
             <br>
             <input type="text" id="personnummer" name="personnummer" pattern="[0-9]{8}-[0-9]{4}" maxlength="13"
@@ -67,15 +68,15 @@
 
             <br>
             <br>
-
+            <!-- Two inputs next to eachother on a row -->
             <div class="row">
                 <div class="col-md-4">
-                    <label for="firstname">Förnamn *</label>
+                    <label for="fname">Förnamn *</label>
                     <br>
                     <input type="text" id="fname" name="förnamn" required>
                 </div>
                 <div class="col-md-4">
-                    <label for="lastname">Efternamn *</label>
+                    <label for="lname">Efternamn *</label>
                     <br>
                     <input type="text" id="lname" name="efternamn" required>
                 </div>
@@ -125,7 +126,7 @@
             <br>
             <br>
 
-            <label for="contact">Hur vill du bli kontaktad? *</label>
+            <label>Hur vill du bli kontaktad? *</label>
             <br>
             <input type="radio" id="telefon" name="contact" value="telefon" checked required>
             <label for="phone">Telefon</label><br>
@@ -137,26 +138,18 @@
             <br>
             <br>
 
-            <label for="contact">Medborgarskap *</label>
+            <label>Medborgarskap *</label>
             <br>
             <input type="radio" id="svensk" name="medborgarskap" value="svensk" checked required>
             <label for="svensk">Svensk</label><br>
             <input type="radio" id="annatLand" name="medborgarskap" value="annat">
-            <label for="annat">Annat</label>
-
+            <label for="annatLand">Annat</label>
+            <!-- Input if other country is chosen (js/applyScript.js) -->
             <input type="text" id="land" name="land" style="visibility:hidden">
+
             <br>
             <br>
-
-
-
-
-
-
-
-
-
-
+            <!-- Apply button -->
             <input id="submitButton" type="submit" value="Apply">
         </form>
     </main>
